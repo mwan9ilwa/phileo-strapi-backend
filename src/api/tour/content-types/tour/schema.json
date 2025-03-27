@@ -1,0 +1,91 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tours",
+  "info": {
+    "singularName": "tour",
+    "pluralName": "tours",
+    "displayName": "Tours",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "tours"
+    },
+    "departureDates": {
+      "type": "json"
+    },
+    "itinerary": {
+      "type": "blocks"
+    },
+    "highlights": {
+      "type": "text"
+    },
+    "included": {
+      "type": "text"
+    },
+    "excluded": {
+      "type": "text"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::destination.destination",
+      "mappedBy": "tour"
+    },
+    "groupSize": {
+      "type": "integer"
+    },
+    "bookingLink": {
+      "type": "text"
+    },
+    "review": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "tour"
+    }
+  }
+}

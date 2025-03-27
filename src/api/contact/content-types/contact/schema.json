@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_us",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contact-us",
+    "displayName": "Contact Us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "googleMapsEmbed": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepage",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homepage",
+    "displayName": "Homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "blocks"
+    },
+    "heroImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "featuredDestinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::destination.destination"
+    },
+    "featuredTours": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tour.tour"
+    }
+  }
+}
